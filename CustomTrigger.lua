@@ -16,6 +16,12 @@ function(allstates, event, isFake)
         min, max = 0, 0 
     end
     state.base = (min + max) / 2
+
+    local additional = desc:match("additional (%d+)")
+    if not additional then
+        additional = 0
+    end
+    state.additional = additional
     
     -- Use Mind Blast for GCD time
     local cast_time = select(4,GetSpellInfo(select(1,GetSpellInfo(133)))) / 1000
