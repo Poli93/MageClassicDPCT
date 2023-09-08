@@ -27,6 +27,7 @@ function()
     
     aura_env.dpct = damage * multipliers / s[2].cast_time
     aura_env.finaldamage = damage * multipliers
+
     
     -- DEBUG
     if false then
