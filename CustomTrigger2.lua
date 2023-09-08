@@ -6,3 +6,8 @@ function()
     aura_env.sp = GetSpellBonusDamage(3) or 0
     return true
 end
+
+-- Duration Info
+function()
+    return aura_env.sp, aura_env.sp, true
+end
