@@ -15,7 +15,8 @@ function()
     local coeff = 1
     -- Remove Darkness from base so it can stack additively with swp_mult later
     local base = s[2].base / (s[5].show and 1.1 or 1)
-    local damage = base + (coeff * s[3].value)
+    local additional = s[2].additional 
+    local damage = (base + additional) + (coeff * s[3].value)
     
     local crit_damage = 1+((1.5) * (s[8].show and 1.03 or 1) - 1) * (s[6].show and 2 or 1)
     local crit = s[4].criticalpercent / 100 + (s[9].show and 0.1 or 0)
@@ -32,6 +33,7 @@ function()
         DevTools_Dump({
                 [aura_env.id] = {
                     base = s[2].base,
+                    additional = s[2].additional
                     coeff = coeff,
                     cast_time = s[2].cast_time,
                     sp = s[3].value,
